@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.image-container {
+    display: flex;
+    height: 100%;
+    max-height: 100vh;
+    width: calc(var(--image-count)*100%);
+    transform: translate(calc(((var(--current-image, 0)/var(--image-count))*-100%) + var(--shift-amount, 0px)));
+}
+
+.image-transition {
+    transition: transform calc(var(--factor-moved, 1)*.5s) ease-out;
+}
+
+.image-container img {
+    min-width: calc(100%/var(--image-count));
+    width: calc(100%/var(--image-count));
+}
